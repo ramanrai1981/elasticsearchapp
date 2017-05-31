@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFileLabel" data-translate="elasticgateApp.file.home.createOrEditLabel">Create or edit a File</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.file.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.file.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.fileNo" for="field_fileNo">File No</label>
+            <input type="text" class="form-control" name="fileNo" id="field_fileNo"
+                    ng-model="vm.file.fileNo"
+                    required/>
+            <div ng-show="editForm.fileNo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fileNo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.file.title"
+                    required/>
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.tag" for="field_tag">Tag</label>
+            <input type="text" class="form-control" name="tag" id="field_tag"
+                    ng-model="vm.file.tag"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.uploadDate" for="field_uploadDate">Upload Date</label>
+                <div class="input-group">
+                    <input id="field_uploadDate" type="text" class="form-control" name="uploadDate" datetime-picker="{{dateformat}}" ng-model="vm.file.uploadDate" is-open="vm.datePickerOpenStatus.uploadDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('uploadDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.status" for="field_status">Status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                    ng-model="vm.file.status"
+                    required/>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="elasticgateApp.file.priority" for="field_priority">Priority</label>
+                <input type="checkbox" name="priority" id="field_priority"
+                          ng-model="vm.file.priority"/>
+            <div ng-show="editForm.priority.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priority.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

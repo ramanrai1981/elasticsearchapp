@@ -1,0 +1,31 @@
+version: '2'
+services:
+    elasticgate-app:
+        image: elasticgate
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=elasticgate-cassandra
+            - JHIPSTER_SLEEP=30 # gives time for the Cassandra cluster to start and execute the migration scripts
+        ports:
+            - 8080:8080
+    elasticgate-cassandra:
+        extends:
+            file: cassandra-cluster.yml
+            service: elasticgate-cassandra
+    elasticgate-cassandra-node:
+        image: cassandra:3.9
+        environment:
+            - CASSANDRA_SEEDS=elasticgate-cassandra
+    elasticgate-cassandra-migration:
+        extends:
+            file: cassandra-migration.yml
+            service: elasticgate-cassandra-migration
+        environment:
+            - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+        environment:
+            - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/docker-config/
