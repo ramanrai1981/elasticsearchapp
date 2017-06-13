@@ -34,6 +34,14 @@
             $state.go('register');
         }
 
+//        $scope.selectedFile = function(selected) {
+//                  if (selected) {
+//                    window.alert('You have selected ' + selected.title);
+//                  } else {
+//                    console.log('cleared');
+//                  }
+//                };
+
         $scope.countrySelected = function(selected) {
           if (selected) {
             window.alert('You have selected ' + selected.title);
@@ -288,15 +296,7 @@
               {name: 'Zimbabwe', code: 'ZW'}
             ];
 
-            $scope.countrySelected9 = {name: 'Zimbabwe', code: 'ZW'};
-            $scope.countrySelectedFn9 = function(selected) {
-              if (selected) {
-                $scope.countrySelected9 = selected.originalObject;
-              } else {
-                $scope.countrySelected9 = null;
-              }
-            }
-
+        loadAll();
         function loadAll() {
             File.query(function(result) {
                 vm.files = result;
