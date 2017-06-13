@@ -6,11 +6,7 @@ abab@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
 
-abbrev@1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
-
-abbrev@1.0.x:
+abbrev@1, abbrev@1.0.x:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
 
@@ -88,6 +84,10 @@ alter@~0.2.0:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angucomplete-alt@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/angucomplete-alt/-/angucomplete-alt-3.0.0.tgz#7c59bec4e9b7f9563a0dc6153c83386e4ac251df"
 
 ansi-escapes@^1.1.0:
   version "1.4.0"
@@ -1329,21 +1329,15 @@ debug@0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
 
-debug@2.2.0, debug@~2.2.0:
+debug@2.2.0, debug@^2.1.0, debug@^2.1.1, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
 
-debug@2.6.7:
+debug@2.6.7, debug@^2.0.0:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
-  dependencies:
-    ms "2.0.0"
-
-debug@^2.0.0, debug@^2.1.0, debug@^2.1.1, debug@^2.2.0:
-  version "2.6.8"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
     ms "2.0.0"
 
@@ -2873,7 +2867,7 @@ generator-jhipster@2.26.2:
     yeoman-generator "0.20.3"
     yo "1.4.8"
 
-generator-jhipster@4.0.7, generator-jhipster@>=3.6.1:
+generator-jhipster@4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/generator-jhipster/-/generator-jhipster-4.0.7.tgz#14f5e3968f9d18b8bd6aa667080af8a18418c074"
   dependencies:
@@ -2894,7 +2888,7 @@ generator-jhipster@4.0.7, generator-jhipster@>=3.6.1:
     yeoman-generator "0.24.1"
     yo "1.8.5"
 
-generator-jhipster@4.2.0:
+generator-jhipster@4.2.0, generator-jhipster@>2.26.0, generator-jhipster@>=3.0.0, generator-jhipster@>=3.6.1, generator-jhipster@>=4.0.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/generator-jhipster/-/generator-jhipster-4.2.0.tgz#cddd97d5e03904d00a6829eb8d59e7de687e0110"
   dependencies:
@@ -2915,7 +2909,7 @@ generator-jhipster@4.2.0:
     yeoman-generator "1.1.1"
     yo "1.8.5"
 
-generator-jhipster@4.3.0, generator-jhipster@>2.26.0, generator-jhipster@>3.0.0, generator-jhipster@>3.6.0, generator-jhipster@>=2.26.0, generator-jhipster@>=3.0.0, generator-jhipster@>=4.1.0:
+generator-jhipster@4.3.0, generator-jhipster@>3.0.0, generator-jhipster@>3.6.0, generator-jhipster@>=2.26.0, generator-jhipster@>=4.1.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/generator-jhipster/-/generator-jhipster-4.3.0.tgz#2538007c235446ed73f1a729d25ae2619398ce1b"
   dependencies:
@@ -2936,7 +2930,7 @@ generator-jhipster@4.3.0, generator-jhipster@>2.26.0, generator-jhipster@>3.0.0,
     yeoman-generator "1.1.1"
     yo "1.8.5"
 
-generator-jhipster@>=2.26.2, generator-jhipster@>=2.27.0, generator-jhipster@>=4.0.0, generator-jhipster@latest:
+generator-jhipster@>=2.26.2, generator-jhipster@>=2.27.0, generator-jhipster@latest:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/generator-jhipster/-/generator-jhipster-4.5.1.tgz#ff0a3b31d961e2ad92c11e3ce8c5479604172701"
   dependencies:
@@ -4639,7 +4633,7 @@ js-yaml@3.6.1:
     argparse "^1.0.7"
     esprima "^2.6.0"
 
-js-yaml@3.8.1, js-yaml@^3.2.7:
+js-yaml@3.8.1, js-yaml@3.x, js-yaml@^3.2.7, js-yaml@^3.5.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.8.1.tgz#782ba50200be7b9e5a8537001b7804db3ad02628"
   dependencies:
@@ -4653,7 +4647,7 @@ js-yaml@3.8.2:
     argparse "^1.0.7"
     esprima "^3.1.1"
 
-js-yaml@3.8.3, js-yaml@3.x, js-yaml@^3.5.1:
+js-yaml@3.8.3:
   version "3.8.3"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.8.3.tgz#33a05ec481c850c8875929166fe1beb61c728766"
   dependencies:
@@ -7178,7 +7172,7 @@ shelljs@0.7.5:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shelljs@0.7.6:
+shelljs@0.7.6, shelljs@^0.7.0, shelljs@^0.7.5:
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.6.tgz#379cccfb56b91c8601e4793356eb5382924de9ad"
   dependencies:
@@ -7186,7 +7180,7 @@ shelljs@0.7.6:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shelljs@0.7.7, shelljs@^0.7.0, shelljs@^0.7.5:
+shelljs@0.7.7:
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.7.tgz#b2f5c77ef97148f4b4f6e22682e10bba8667cff1"
   dependencies:

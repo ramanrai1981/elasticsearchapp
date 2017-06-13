@@ -6,11 +6,31 @@
             <div class="col-xs-4 no-padding-left">
 
             </div>
+            <!--//country-->
+            <div>
+                <angucomplete-alt id="country"
+                                  placeholder="Search countries"
+                                  pause="100"
+                                  selected-object="selectedCountry"
+                                  local-data="countries"
+                                  search-fields="name"
+                                  title-field="name"
+                                  minlength="1"
+                                  input-class="form-control form-control-small"/>
+
+            </div>
+            <div class="result">
+                <div ng-show="selectedCountry">
+                    You selected <span class="bold-span">{{selectedCountry.originalObject.name}}</span> which has a country code of <span class="bold-span">{{selectedCountry.originalObject.code}}</span>
+                </div>
+            </div>
+            <!--//end country search-->
+
             <div class="col-xs-8 no-padding-right">
                 <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery">
-                        <span  class="input-group-btn width-min" >
+                    <div class="input-group pull-right">
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="search tag like note or order or do">
+                        <span class="input-group-btn width-min">
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
@@ -73,7 +93,9 @@
                 </td>
             </tr>
             </tbody>
+
         </table>
+
     </div>
 </div>
 

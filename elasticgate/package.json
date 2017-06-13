@@ -92,7 +92,6 @@
     "generator-jhipster-google-maps": "0.0.1",
     "generator-jhipster-botw-theme": "0.0.0",
     "generator-jhipster-webservice": "0.1.0",
-
     "yargs": "5.0.0"
   },
   "engines": {
@@ -100,5 +99,8 @@
   },
   "scripts": {
     "test": "gulp test"
+  },
+  "dependencies": {
+    "angucomplete-alt": "^3.0.0"
   }
 }
