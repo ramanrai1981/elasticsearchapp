@@ -1,0 +1,31 @@
+{
+    "elasticgateApp": {
+        "file" : {
+            "home": {
+                "title": "Files",
+                "createLabel": "Create a new File",
+                "createOrEditLabel": "Create or edit a File",
+                "search": "Search for File"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete File {{ id }}?"
+            },
+            "detail": {
+                "title": "File"
+            },
+            "fileNo": "File No",
+            "title": "Title",
+            "tag": "Tag",
+            "uploadDate": "Upload Date",
+            "status": "Status",
+            "priority": "Priority"
+        }
+    },
+    "elasticmicromysqlApp": {
+        "file" : {
+            "created": "A new File is created with identifier {{ param }}",
+            "updated": "A File is updated with identifier {{ param }}",
+            "deleted": "A File is deleted with identifier {{ param }}"
+        }
+    }
+}

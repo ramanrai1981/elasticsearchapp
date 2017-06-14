@@ -1,0 +1,122 @@
+<div>
+
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+
+            </div>
+            <!--//country-->
+            <div>
+                <angucomplete-alt id="countryselected"
+                                  placeholder="Search countries"
+                                  pause="100"
+                                  selected-object="selectedCountry"
+                                  local-data="countries"
+                                  search-fields="name,code"
+                                  title-field="name"
+                                  minlength="1"
+                                  input-class="form-control form-control-small"/>
+
+            </div>
+            <div class="result">
+                <div ng-show="selectedCountry">
+                    You selected <span class="bold-span">{{selectedCountry.originalObject.name}}</span> which has a
+                    country code of <span class="bold-span">{{selectedCountry.originalObject.code}}</span>
+                </div>
+            </div>
+            <!--//end country search-->
+
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <!--<div class="input-group pull-right">-->
+                    <!--<input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="search tag like note or order or do">-->
+                    <!--<span class="input-group-btn width-min">-->
+                    <!--<button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">-->
+                    <!--<span class="glyphicon glyphicon-search"></span>-->
+                    <!--</button>-->
+                    <!--</span>-->
+                    <!--<span class="input-group-btn width-min" ng-if="vm.currentSearch">-->
+                    <!--<button class="btn btn-info" ng-click="vm.clear()">-->
+                    <!--<span class="glyphicon glyphicon-trash"></span>-->
+                    <!--</button>-->
+                    <!--</span>-->
+                    <!--</div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <angucomplete-alt id="filesearchthroughautocomplete"
+                          placeholder="Search File through tag or title or fileNo by autocomplete"
+                          pause="100"
+                          selected-object="selectedFile"
+                          local-data="vm.files"
+                          search-fields="fileNo,title,tag"
+                          title-field="tag,title,fileNo,uploadDate"
+                          minlength="1"
+                          input-class="form-control form-control-small"/>
+    </div>
+    <div>
+        <tags-input ng-model="tags">
+            <auto-complete source="loadTags($query)"></auto-complete>
+        </tags-input>
+    </div>
+
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr ng-show="hide" class="ng-hide">
+                <th><span data-translate="global.field.id">ID</span></th>
+                <th><span data-translate="elasticgateApp.file.fileNo">File No</span></th>
+                <th><span data-translate="elasticgateApp.file.title">Title</span></th>
+                <th><span data-translate="elasticgateApp.file.tag">Tag</span></th>
+                <th><span data-translate="elasticgateApp.file.uploadDate">Upload Date</span></th>
+                <th><span data-translate="elasticgateApp.file.status">Status</span></th>
+                <th><span data-translate="elasticgateApp.file.priority">Priority</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr ng-repeat="file in vm.files track by file.id">-->
+            <tr ng-repeat="file in selectedFile">
+                <td><a ui-sref="file-detail({id:file.id})">{{file.id}}</a></td>
+                <td>{{file.fileNo}}</td>
+                <td>{{file.title}}</td>
+                <td>{{file.tag}}</td>
+                <td>{{file.uploadDate | date:'medium'}}</td>
+                <td>{{file.status}}</td>
+                <td>{{file.priority}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="file-detail({id:file.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="file.edit({id:file.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="file.delete({id:file.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+</div>
