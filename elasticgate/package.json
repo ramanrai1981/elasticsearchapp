@@ -101,6 +101,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "angucomplete-alt": "^3.0.0"
+    "angucomplete-alt": "^3.0.0",
+    "ng-tags-input": "^3.2.0"
   }
 }

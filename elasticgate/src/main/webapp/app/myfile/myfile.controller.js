@@ -296,6 +296,11 @@
               {name: 'Zimbabwe', code: 'ZW'}
             ];
 
+        $scope.tags = [{ text: 'just' },{ text: 'some' },{ text: 'cool' },{ text: 'tags' }];
+        $scope.loadTags = function(query) {
+             return $http.get('/tags?query=' + query);
+        };
+
         loadAll();
         function loadAll() {
             File.query(function(result) {
